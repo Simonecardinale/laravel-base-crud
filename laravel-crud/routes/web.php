@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })-> name('pagina-home');
+
+Route::resource('pv', 'PvController');

@@ -9,5 +9,6 @@
 </head>
 <body>
     @include('partials-php.header')
+    <main>@yield('container')</main>
 </body>
 </html>
