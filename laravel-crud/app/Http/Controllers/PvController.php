@@ -48,7 +48,9 @@ class PvController extends Controller
      */
     public function show($id)
     {
-        //
+        $pv_sel = PV::find($id);
+        $data = ['item' => $pv_sel];
+        return view('pv.show', $data);
     }
 
     /**
