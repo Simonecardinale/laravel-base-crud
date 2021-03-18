@@ -26,7 +26,7 @@ class PvController extends Controller
      */
     public function create()
     {
-        //
+        return view('pv.create');
     }
 
     /**
@@ -37,7 +37,16 @@ class PvController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> all();
+        $pvnew = new Pv();
+        $pvnew->colore = $data['colore'];
+        $pvnew->tipologiaProdotto = $data['tipologia-prodotto'];
+        $pvnew->liquidiSupportati = $data['liquidi-supportati'];
+        $pvnew->prezzo = $data['prezzo'];
+        $pvnew->description = $data['description'];
+
+        $pvnew -> save();
+        return redirect()->route('pv.index', $pvnew->find($pvnew->id));
     }
 
     /**

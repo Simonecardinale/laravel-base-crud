@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePvsTable extends Migration
+class CreatePvesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePvsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pvs', function (Blueprint $table) {
+        Schema::create('pves', function (Blueprint $table) {
             $table->id();
-            $table->string('tipologiaProdotto');
+            $table->string('tipologiaprodotto');
             $table->string('colore', 20);
-            $table->string('liquidiSupportati', 10);
+            $table->string('liquidisupportati', 10);
             $table->float('prezzo',5,2);
             $table->text('description');
             $table->timestamps();
@@ -31,6 +31,6 @@ class CreatePvsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pvs');
+        Schema::dropIfExists('pves');
     }
 }
