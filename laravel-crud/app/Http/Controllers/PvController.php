@@ -44,7 +44,7 @@ class PvController extends Controller
         $pvnew->liquidiSupportati = $data['liquidi-supportati'];
         $pvnew->prezzo = $data['prezzo'];
         $pvnew->description = $data['description'];
-
+        // $pvnew->fill($data);
         $pvnew -> save();
         return redirect()->route('pv.index', $pvnew->find($pvnew->id));
     }
