@@ -58,12 +58,19 @@ class PvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pv $pv)
     {
-        $pv_sel = PV::find($id);
-        $data = ['item' => $pv_sel];
+        // $pv_sel = PV::find($id);
+        $data = ['item' => $pv];
         return view('pv.show', $data);
     }
+
+    // public function show($id)
+    // {
+    //     $pv_sel = PV::find($id);
+    //     $data = ['item' => $pv_sel];
+    //     return view('pv.show', $data);
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -71,9 +78,10 @@ class PvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pv $pv)
     {
-        //
+        $data = ['item' => $pv];
+        return view('pv.edit', $data);
     }
 
     /**

@@ -24,7 +24,9 @@
             <td>{{ $item -> liquidiSupportati }}</td>
             <td>{{ $item -> prezzo }}</td>
             <td>{{ $item -> description }}</td>
-            <td><a href="{{ route('pv.show', ['pv'=> $item -> id]) }}">Dettagli</a></td>
+            <td><a href="{{ route('pv.show', ['pv'=> $item -> id]) }}">Dettagli</a>
+              <a href="{{ route('pv.edit', ['pv'=> $item -> id]) }}">Modifica</a>
+            </td>
         </tr>
     </tbody>
     @endforeach
