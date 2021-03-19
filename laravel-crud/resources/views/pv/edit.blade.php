@@ -2,8 +2,8 @@
 
 @section('container')
 
-<form method="post" action="">
-    @method('POST')
+<form method="post" action="{{ route('pv.update', $item-> id) }}">
+    @method('PUT')
     @csrf
     <div class="form-group">
       <label for="input-colore">Colore Prodotto</label>
