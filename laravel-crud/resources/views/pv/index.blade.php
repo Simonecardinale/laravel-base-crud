@@ -26,6 +26,11 @@
             <td>{{ $item -> description }}</td>
             <td><a href="{{ route('pv.show', ['pv'=> $item -> id]) }}">Dettagli</a>
               <a href="{{ route('pv.edit', ['pv'=> $item -> id]) }}">Modifica</a>
+              <form action="{{ route('pv.destroy', $item-> id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger">Cancella</button>
+              </form>
             </td>
         </tr>
     </tbody>

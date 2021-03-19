@@ -94,7 +94,14 @@ class PvController extends Controller
     public function update(Request $request, Pv $pv)
     {
         $data = $request -> all();
-        $pv -> update($data);
+        $pv->colore = $data['colore'];
+        $pv->tipologiaProdotto = $data['tipologia-prodotto'];
+        $pv->liquidiSupportati = $data['liquidi-supportati'];
+        $pv->prezzo = $data['prezzo'];
+        $pv->description = $data['description'];
+        // $pv -> update($data);
+        $pv->save();
+        return redirect()-> route('pv.index');
     }
 
     /**
@@ -103,8 +110,9 @@ class PvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PV $pv)
     {
-        //
+        $pv-> delete();
+        return redirect()-> route('pv.index');
     }
 }
