@@ -38,6 +38,9 @@ class PvController extends Controller
     public function store(Request $request)
     {
         $data = $request -> all();
+        $request -> validate([
+            'colore' => 'required|unique:pvs|max:255',
+        ]);
         $pvnew = new Pv();
         $pvnew->colore = $data['colore'];
         $pvnew->tipologiaProdotto = $data['tipologia-prodotto'];
